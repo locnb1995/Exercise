@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Master Management - Group Management</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<header id="header">
+<div class="logo"><img src="images/logo.svg"></div>
+
+<div id="menu">
+<div class="userid">luyenlv@angular.com<span class="down"></span></div>
+<ul id ="s-menu" class="d-menu">
+   	<li><a href="mastermainte.html"><span class="icon-menu menu_db"></span>Dashboard</a></li>
+    <li><a href="myaccount.html"><span class="icon-menu menu_account"></span>My Account</a></li>
+    <li><a href="usermanage.html"><span class="icon-menu menu_setting"></span>User management</a></li>
+    <li><a href="logout.html"><span class="icon-menu menu_logout"></span>Logout</a></li>
+</ul>
+</div><!-- menu -->
+</header><!-- header -->
+
+<div class="wrap">
+
+<nav id="nav">
+	<div class="btn btn-primary btn-s btn-menu">
+         <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+	<ul class="nav">
+        <li><a href="usermanage.html"><span class="icon-nav lmenu_user"></span><span class="nav-item">User management</span></a></li>
+        <li><a href="usergroupmanage.html"><span class="icon-nav lmenu_group"></span><span class="nav-item">Group management</span></a></li>
+	</ul>
+</nav>
+
+<section class="content-area">
+	<h2 class="ttl">Group Management</h2>
+	<article>
+	    	<div class="manage-tool">
+            <div class="search_box">
+				<input type="text" class="search" placeholder="Please input a group name"><span class="icon-search"></span>
+                <hr>
+			</div>
+            <a href="usergroupmanage_new.html"><button type="button" class="btn btn-sub">+ Add group</button></a>
+		</div>
+        <div class="manage-list link-list">
+			<ul class="list">
+                <li>
+            			<div class="item-text">
+            				<a href="usergroupmanage_detail.html"><span>DAQA</span></a>
+					</div>
+                 	<div class="action">
+                 		<span class="icon-trash2"></span>
+                 	</div>
+            		</li>
+                <li>
+            			<div class="item-text">
+            				<span>TESE</span>
+					</div>
+                 	<div class="action">
+                 		<span class="icon-trash2"></span>
+                 	</div>
+            		</li>
+                <li>
+            			<div class="item-text">
+            			<span>DMDV</span>
+					</div>
+                 	<div class="action">
+                 		<span class="icon-trash2"></span>
+                 	</div>
+            		</li>
+                <li>
+            			<div class="item-text">
+            				<span>INSIGHT</span>
+					</div>
+                		 <div class="action">
+                 		<span class="icon-trash2"></span>
+                 	</div>
+            		</li>
+        		</ul>
+		</div>
+	</article>
+</section>
+
+</div><!-- wrap -->
+
+</body>
+
+</html>

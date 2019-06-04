@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Master Management - User Manager</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<header id="header">
+<div class="logo"><images src="img/logo.svg"></div>
+
+<div id="menu">
+<div class="userid">luyenlv@angular.com<span class="down"></span></div>
+<ul id ="s-menu" class="d-menu">
+   	<li><a href="mastermainte.html"><span class="icon-menu menu_db"></span>Dashboard</a></li>
+    <li><a href="myaccount.html"><span class="icon-menu menu_account"></span>My Account</a></li>
+    <li><a href="usermanage.html"><span class="icon-menu menu_setting"></span>User management</a></li>
+    <li><a href="logout.html"><span class="icon-menu menu_logout"></span>Logout</a></li>
+</ul>
+</div><!-- menu -->
+</header><!-- header -->
+
+<div class="wrap">
+
+<nav id="nav">
+	<div class="btn btn-primary btn-s btn-menu">
+         <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+	<ul class="nav">
+        <li><a href="usermanage.html"><span class="icon-nav lmenu_user"></span><span class="nav-item">User management</span></a></li>
+        <li><a href="usergroupmanage.html"><span class="icon-nav lmenu_group"></span><span class="nav-item">Group management</span></a></li>
+	</ul>
+</nav>
+
+<section class="content-area">
+	<h2 class="ttl">User management</h2>
+	<article>
+	    	<div class="manage-tool">
+            <div class="search_box">
+				<input type="text" class="search" placeholder="Please input user id"><span class="icon-search"></span>
+                <hr>
+			</div>
+            <a href="usermanage_new.html"><button type="button" class="btn btn-sub">+ New User Registration</button></a>
+		</div>
+        <div class="manage-list">
+			<ul class="list">
+                <li class="list-myaccount">
+                    <div class="item-text">
+                        <input type="text" class="textbox textbox-box2"  placeholder="Please input your e-mail address" value="luyenlv@angular.com">
+                        <button type="button" class="btn btn-sub">Edit</button>
+                    </div>
+                     <div class="action">
+                        <span class="icon-trash2"></span>
+                     </div>
+                     <div class="radio-box">
+                        <input type="radio" name="RadioAuth1" value="radio" id="auth0-1" checked>
+                        <label for="auth0-1" class="radio">Administrator</label>
+                        <input type="radio" name="RadioAuth1" value="radio" id="auth0-2">
+                        <label for="auth0-2" class="radio">Editor</label>
+                        <input type="radio" name="RadioAuth1" value="radio" id="auth0-3">
+                        <label for="auth0-3" class="radio">Normal</label>
+                     </div>
+                </li>
+                <li>
+                        <div class="item-text">
+                            <input type="text" class="textbox textbox-box2"  placeholder="Please input your e-mail address" value="son@angular.com">
+                        <button type="button" class="btn btn-sub">Edit</button>
+                    </div>
+                     <div class="action">
+                        <span class="icon-trash2"></span>
+                     </div>
+                     <div class="radio-box">
+                        <input type="radio" name="RadioAuth2" value="radio" id="auth1-1">
+                        <label for="auth1-1" class="radio">Administrator</label>
+                        <input type="radio" name="RadioAuth2" value="radio" id="auth1-2">
+                        <label for="auth1-2" class="radio">Editor</label>
+                        <input type="radio" name="RadioAuth2" value="radio" id="auth1-3" checked>
+                        <label for="auth1-3" class="radio">Normal</label>
+                        </div>
+                </li>
+                <li>
+                        <div class="item-text">
+                            <input type="text" class="textbox textbox-box2"  placeholder="Please input your e-mail address" value="giang@angular.com">
+                        <button type="button" class="btn btn-sub">Edit</button>
+                    </div>
+                     <div class="action">
+                        <span class="icon-trash2"></span>
+                     </div>
+                     <div class="radio-box">
+                        <input type="radio" name="RadioAuth3" value="radio" id="auth2-1">
+                        <label for="auth2-1" class="radio">Administrator</label>
+                        <input type="radio" name="RadioAuth3" value="radio" id="auth2-2">
+                        <label for="auth2-2" class="radio">Editor</label>
+                        <input type="radio" name="RadioAuth3" value="radio" id="auth2-3" checked>
+                        <label for="auth2-3" class="radio">Normal</label>
+                        </div>
+                </li>
+                <li>
+                        <div class="item-text">
+                            <input type="text" class="textbox textbox-box2"  placeholder="Please input your e-mail address" value="hoanganh@angular.com">
+                        <button type="button" class="btn btn-sub">Edit</button>
+                    </div>
+                     <div class="action">
+                        <span class="icon-trash2"></span>
+                     </div>
+                     <div class="radio-box">
+                        <input type="radio" name="RadioAuth4" value="radio" id="auth3-1">
+                        <label for="auth3-1" class="radio">Administrator</label>
+                        <input type="radio" name="RadioAuth4" value="radio" id="auth3-2">
+                        <label for="auth3-2" class="radio">Editor</label>
+                        <input type="radio" name="RadioAuth4" value="radio" id="auth3-3" checked>
+                        <label for="auth3-3" class="radio">Normal</label>
+                        </div>
+                </li>
+        		</ul>
+		</div>
+	</article>
+</section>
+
+</div><!-- wrap -->
+
+</body>
+
+</html>

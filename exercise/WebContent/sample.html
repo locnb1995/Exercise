@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Master Management - Sample</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<!--modal-window-->
+<div id="modal-content-view">
+    <div class="view-dialog">
+        <div class="dialog-tytle">
+            <span class="dialog-ttl">Title</span>
+            <span class="dialog-close"></span>
+        </div><!--dialog-tytle-->
+        <div class="dialog-content">
+			<div class="dialog-icon">
+                    <span class="warning"></span>
+  			</div>
+			<p class="dialog-text dialog-text-icon">Content</p>
+        </div>
+        <div class="dialog-footer">
+        		<button type="button" class="btn btn-default">Cancel</button>
+        		<button type="button" class="btn btn-primary">OK</button>
+        </div><!--dialog-footer-->
+    </div><!--view-dialog-->
+</div><!--modal-content-view-->
+
+<header id="header">
+<div class="logo"><img src="images/logo.svg"></div>
+
+<div id="menu">
+<div class="userid">luyenlv@angular.com<span class="down"></span></div>
+<ul id ="s-menu" class="d-menu">
+   	<li><a href="mastermainte.html"><span class="icon-menu menu_db"></span>Dashboard</a></li>
+    <li><a href="myaccount.html"><span class="icon-menu menu_account"></span>My Account</a></li>
+    <li><a href="usermanage.html"><span class="icon-menu menu_setting"></span>User management</a></li>
+    <li><a href="logout.html"><span class="icon-menu menu_logout"></span>Logout</a></li>
+</ul>
+</div><!-- menu -->
+</header><!-- header -->
+
+<div class="wrap">
+
+<nav id="nav">
+    		<div class="btn btn-primary btn-s btn-menu">
+             <a class="menu-trigger" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+            </a>
+        </div>
+	<ul class="nav">
+        <li><a href="#"><span class="icon-nav lmenu_user"></span><span class="nav-item">A</span></a></li>
+        <li><a href="#"><span class="icon-nav lmenu_user"></span><span class="nav-item">B</span></a></li>
+        <li><a href="#"><span class="icon-nav lmenu_group"></span><span class="nav-item">C</span></a></li>
+	</ul>
+</nav>
+
+<section class="content-area">
+	<article>
+		<h2 class="ttl">h2</h2>
+    		<h3 class="ttl">h3</h2>
+    </article>
+    	<article>
+		<h2 class="ttl">Button</h2>
+        <p>
+        		<button type="button" class="btn btn-default">Default</button>
+        		<button type="button" class="btn btn-primary">Primary</button>
+        		<button type="button" class="btn btn-danger">Danger</button>
+             <button type="button" class="btn btn-sub">Sub</button>
+        </p>
+        <p>
+        		<button type="button" class="btn btn-default" disabled="disabled">Default disabled</button>
+        		<button type="button" class="btn btn-primary" disabled="disabled">Primary disabled</button>
+        		<button type="button" class="btn btn-danger" disabled="disabled">Danger disabled</button>
+             <button type="button" class="btn btn-sub" disabled="disabled">Sub disabled</button>
+        </p>
+        <p>
+        		<button type="button" class="btn btn-default btn-l">Default Large</button>
+        		<button type="button" class="btn btn-primary btn-l">Primary Large</button>
+        		<button type="button" class="btn btn-danger btn-l">Danger Large</button>
+             <button type="button" class="btn btn-sub btn-l">Sub Large</button>
+        </p>
+        <p>
+        		<button type="button" class="btn btn-default btn-s">Default Small</button>
+        		<button type="button" class="btn btn-primary btn-s">Primary Small</button>
+        		<button type="button" class="btn btn-danger btn-s">Danger Small</button>
+			<button type="button" class="btn btn-sub btn-s">Sub Small</button>
+        </p>
+        <p>
+        		<button type="button" class="btn btn-default btn-xs">Default XSmall</button>
+        		<button type="button" class="btn btn-primary btn-xs">Primary  XSmall</button>
+        		<button type="button" class="btn btn-danger btn-xs">Danger  XSmall</button>
+             <button type="button" class="btn btn-sub btn-xs">Danger  XSmall</button>
+        </p>        
+    </article>
+    	<article>
+		<h2 class="ttl">Tool Button</h2>
+        <p>
+        		<button type="button" class="btn btn-sub btn-s"><span class="icon-edit"></span>Edit</button>
+             <button type="button" class="btn btn-sub btn-s"><span class="icon-download"></span>download</button>
+             <button type="button" class="btn btn-sub btn-s"><span class="icon-upload"></span>Upload</button>
+             <button type="button" class="btn btn-sub btn-s">+ row</button>
+        		<button type="button" class="btn btn-danger btn-s btn-danger-tool"><span class="icon-trash"></span>Delete</button>
+			<button type="button" class="btn btn-primary btn-s"><span class="icon-save"></span>Save</button>
+        </p>
+    </article>
+    	<article>
+		<h2 class="ttl">Text box</h2>
+        <p>
+      		<label class="item-ttl">Label</label>
+			<input type="text" class="textbox textbox-box"  placeholder="Holder">
+        </p>
+        <p>
+        		<label class="item-ttl">Label</label>
+			<input type="text" class="textbox textbox-box2"  placeholder="Holder2">
+        </p>
+        <p>
+        		<label class="item-ttl">Label</label>
+			<input type="text" class="textbox textbox-line"  placeholder="Holder">
+        </p>
+    </article>
+  <article>
+		<h2 class="ttl">Search</h2>
+        <p>
+	<div class="search_box">
+				<input type="text" class="search" placeholder="Holder"><span class="icon-search"></span>
+                <hr>
+	</div>
+        </p>
+    </article>
+    	<article>
+		<h2 class="ttl">Radio</h2>
+        		<div class="radio-box">
+                <input type="radio" name="RadioGroup1" value="radio" id="radio01">
+                <label for="radio01" class="radio">radio1</label>
+                <input type="radio" name="RadioGroup1" value="radio" id="radio02">
+                <label for="radio02" class="radio">radio2</label>
+                <input type="radio" name="RadioGroup1" value="radio" id="radio03" checked>
+                <label for="radio03" class="radio">radio3</label>
+            </div>
+    </article>
+    <article>
+		<h2 class="ttl">Checkbox</h2>
+        		<div class="check-box">
+                <input type="checkbox" value="checkbox" id="check01">
+                <label for="check01" class="check">Label</label>
+            </div>
+    </article>
+	<article>
+		<h2 class="ttl">Switch</h2>
+        <div class="switch-box">
+			<input type="checkbox" id="switch01" class="switch"/>
+			<label for="switch01" data-on-label="ON" data-off-label="OFF"></label>
+        </div>
+    </article>
+	<article>
+		<h2 class="ttl">List</h2>
+        <ul class="list">
+			<li>
+            		<div class="item-text">
+            			<input type="text" class="textbox textbox-box2"  placeholder="Holder" value="bbbbbbbb@angular.com">
+					<button type="button" class="btn btn-sub">Button</button>
+                </div>
+                 <div class="action">
+                 	<span class="icon-delete"></span>
+                 </div>
+                 <div class="radio-box">
+                    <input type="radio" name="RadioAuth" value="radio" id="auth01">
+                    <label for="auth01" class="radio">Admin</label>
+                    <input type="radio" name="RadioAuth" value="radio" id="auth02">
+                    <label for="auth02" class="radio">Edit</label>
+                    <input type="radio" name="RadioAuth" value="radio" id="auth03" checked>
+                    <label for="auth03" class="radio">User</label>
+            		</div>
+            </li>
+			<li>
+            		<div class="item-text">
+            			<span>DAQA</span>
+				</div>
+                 <div class="action">
+                 	<span class="icon-trash2"></span>
+                 </div>
+            </li>
+			<li>
+            		<div class="item-text">
+            			<span>A</span>
+                     <span>B</span>
+                     <span>C</span>
+				</div>
+                 <div class="action">
+                 	<span class="icon-trash2"></span>
+                 </div>
+            </li>
+        </ul>
+    </article>
+	<article>
+    		<h2 class="ttl">Modal Dialog</h2>
+        <p>
+		<button type="button" id="modal-open-contentview" class="btn btn-primary btn-l">Show</button>
+        </p>
+    </article>
+</div><!--page-->
+
+    
+    
+    
+</section>
+
+
+</div><!-- wrap -->
+
+</body>
+
+</html>

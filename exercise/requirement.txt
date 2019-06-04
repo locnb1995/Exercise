@@ -1,0 +1,4 @@
+﻿1. Tạo datamodel từ dữ liệu các pages đã cho.
+2. Chỉ admin mới vào được trang quản lý users, quản lý groups.
+3. Viết các API cần thiết để client sử dụng, hoặc có thể dùng dữ liệu giả để cho client làm việc.
+3. Toàn bộ pages hiện thời đang là html + sử dụng jquery, mong muốn chuyển đổi toàn bộ pages thành 1 angular project hoàn chỉnh.
