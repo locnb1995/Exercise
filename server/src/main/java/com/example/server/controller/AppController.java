@@ -3,7 +3,10 @@ package com.example.server.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.server.entity.*;
 
@@ -11,6 +14,7 @@ import com.example.server.responsitory.UserGroupResponsitory;
 import com.example.server.responsitory.UserResponsitory;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class AppController {
 	
 	@Autowired
@@ -19,9 +23,14 @@ public class AppController {
 	@Autowired
 	private UserResponsitory userResponsitory;
 	
-	@GetMapping
+	@GetMapping("/")
 	public List<User> index(){
 		return userResponsitory.findAll();
+	}
+	
+	@PostMapping("/addUser")
+	public void addUser(@RequestBody User user) {
+		userResponsitory.save(user);
 	}
 	
 }

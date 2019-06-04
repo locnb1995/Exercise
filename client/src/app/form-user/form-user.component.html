@@ -1,0 +1,44 @@
+<section class="content-area">
+  <h2 class="ttl">New User Registration</h2>
+  <article>
+    <div class="manage-tool">
+      <input type="text" class="textbox textbox-line" placeholder="Please input your e-mail address for ID" #userEmail>
+      <div class="radio-box">
+        <input type="radio" name="RadioAuth0" value="radio" id="auth0-1" #adminChecked>
+        <label for="auth0-1" class="radio">Administrator</label>
+        <input type="radio" name="RadioAuth0" value="radio" id="auth0-2" #editorChecked>
+        <label for="auth0-2" class="radio">Editor</label>
+        <input type="radio" name="RadioAuth0" value="radio" id="auth0-3" #normalChecked>
+        <label for="auth0-3" class="radio">Normal</label>
+      </div>
+      <button type="button" class="btn btn-sub" (click)="addUserToListAdd()">+ Add</button>
+    </div>
+    <div class="manage-list">
+      <ul class="list">
+        <li *ngFor="let item of listUserAdd">
+          <div class="item-text">
+            <span>{{ item.username }}</span>
+          </div>
+          <div class="action">
+            <span class="icon-delete"></span>
+          </div>
+          <div class="radio-box">
+            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-1" [checked]="item.admin">
+            <label for="auth1-1" class="radio">Administrator</label>
+            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-2" [checked]="item.editor">
+            <label for="auth2-2" class="radio">Editor</label>
+            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-3" [checked]="item.normal">
+            <label for="auth2-3" class="radio">Normal</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="form-btn form-btn-manage">
+      <a>
+        <button type="button" (click)="redirectToUserManager()" id="change-password-cancel"
+          class="btn btn-default btn-l">Cancel</button>
+      </a>
+      <button type="button" (click)="saveListUser()" id="modal-open-contentview" class="btn btn-primary btn-l" [disabled]="listUserAdd.length === 0">Save All</button>
+    </div>
+  </article>
+</section>

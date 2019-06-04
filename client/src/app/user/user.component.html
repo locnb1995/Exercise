@@ -1,3 +1,34 @@
-<p>
-  user works!
-</p>
+<section [ngClass]="sectionClass">
+  <h2 class="ttl">User management</h2>
+  <article>
+    <div class="manage-tool">
+      <div class="search_box">
+        <input type="text" class="search" placeholder="Please input user id"><span class="icon-search"></span>
+        <hr>
+      </div>
+      <a (click)="redirectToAddUser()"><button type="button" class="btn btn-sub">+ New User Registration</button></a>
+    </div>
+    <div class="manage-list">
+      <ul class="list">
+        <li *ngFor="let item of listUser">
+          <div class="item-text">
+            <input type="text" class="textbox textbox-box2" placeholder="Please input your e-mail address"
+              [value]="item.username">
+            <button type="button" class="btn btn-sub">Edit</button>
+          </div>
+          <div class="action">
+            <span class="icon-trash2"></span>
+          </div>
+          <div class="radio-box">
+            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-1" [checked]="item.admin">
+            <label for="auth{{item.id}}-1" class="radio">Administrator</label>
+            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-2" [checked]="item.editor">
+            <label for="auth{{item.id}}-2" class="radio">Editor</label>
+            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-3" [checked]="item.normal">
+            <label for="auth{{item.id}}-3" class="radio">Normal</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </article>
+</section>
