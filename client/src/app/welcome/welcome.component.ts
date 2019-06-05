@@ -77,10 +77,8 @@ export class WelcomeComponent implements OnInit {
   }
 
   saveUser() {
-    //console.log(this.listUser);
-    let key = 0;
+    let arrayToPostManyUser = new Array<User>();
     for (let i of this.listUserAdd) {
-      key = key + 1;
       let userToPost = new User();
       userToPost.username = i.username;
       userToPost.password = '123456';
@@ -94,7 +92,9 @@ export class WelcomeComponent implements OnInit {
         userToPost.role = 3;
       }
       userToPost.user_group = {id : 1 , name : 'game'};
-      this.userService.createNewUser(userToPost).subscribe(data => {
+      arrayToPostManyUser.push(userToPost);
+    }
+    this.userService.createManyUser(arrayToPostManyUser).subscribe(data => {
         this.userService.getListUser().subscribe((data1: Array<User>) => {
           this.listUser = data1;
           this.listUserShow = new Array<UserToShow>();
@@ -115,8 +115,34 @@ export class WelcomeComponent implements OnInit {
           });
           this.redirectToUser();
         });
-      });
-    }
+    });
   }
 
+  removeUserFormAddList(id) {
+    let index: number;
+    index = this.listUserAdd.findIndex(x => x.id === id);
+    this.listUserAdd.splice(index, 1);
+  }
+
+  redirectToManager() {
+    this.userService.getListUser().subscribe((data: Array<User>) => {
+      this.listUser = data;
+      this.listUserShow = new Array<UserToShow>();
+      data.forEach(element => {
+        this.userToShow = new UserToShow();
+        this.userToShow.id = element.id;
+        this.userToShow.username = element.username;
+        if (element.role === 1) {
+          this.userToShow.admin = true;
+        }
+        if (element.role === 2) {
+          this.userToShow.editor = true;
+        }
+        if (element.role === 3) {
+          this.userToShow.normal = true;
+        }
+        this.listUserShow.push(this.userToShow);
+      });
+    });
+  }
 }

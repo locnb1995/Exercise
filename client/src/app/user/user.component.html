@@ -17,7 +17,7 @@
             <button type="button" class="btn btn-sub">Edit</button>
           </div>
           <div class="action">
-            <span class="icon-trash2"></span>
+            <span class="icon-trash2" (click)="deleteUser(item.id)"></span>
           </div>
           <div class="radio-box">
             <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-1" [checked]="item.admin">

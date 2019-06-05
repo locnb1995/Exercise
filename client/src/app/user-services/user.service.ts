@@ -21,4 +21,17 @@ export class UserService {
     return this.http.post('http://localhost:8080/addUser', value, httpOptions);
   }
 
+  createManyUser(value) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.post('http://localhost:8080/addManyUser', value, httpOptions);
+  }
+
+  deleteUser(id) {
+    return this.http.delete('http://localhost:8080/deleteUserById/' + id);
+  }
+
 }

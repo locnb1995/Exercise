@@ -2,9 +2,9 @@
 <div class="wrap">
   <app-menu (clickChangeMenu)="changeMenu()" (redirectToUser)="redirectToUser()"></app-menu>
   <ng-container *ngIf="!showFormUser">
-    <app-user [sectionClass]="sectionClass" [listUser]="listUserShow" (redirect)="redirectToFormUser()"></app-user>
+    <app-user (redirectToManager)="redirectToManager()" [sectionClass]="sectionClass" [listUser]="listUserShow" (redirect)="redirectToFormUser()"></app-user>
   </ng-container>
   <ng-container *ngIf="showFormUser">
-    <app-form-user (saveUser)="saveUser()" [listUserAdd]="listUserAdd" (redirectToUser)="redirectToUser()" (addUserToList)="addUserToList($event)"></app-form-user>
+    <app-form-user (removeUserFormAddList)="removeUserFormAddList($event)" (saveUser)="saveUser()" [listUserAdd]="listUserAdd" (redirectToUser)="redirectToUser()" (addUserToList)="addUserToList($event)"></app-form-user>
   </ng-container>
 </div><!-- wrap -->

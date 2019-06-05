@@ -11,6 +11,7 @@ export class FormUserComponent implements OnInit {
   @Input() listUserAdd = new Array<UserToShow>();
   @Output() addUserToList = new EventEmitter<Array<UserToShow>>();
   @Output() saveUser = new EventEmitter();
+  @Output() removeUserFormAddList = new EventEmitter<number>();
   @ViewChild('userEmail') userEmail: ElementRef;
   @ViewChild('adminChecked') adminChecked: ElementRef;
   @ViewChild('editorChecked') editorChecked: ElementRef;
@@ -18,6 +19,7 @@ export class FormUserComponent implements OnInit {
   listUser = new Array<UserToShow>();
   user = new UserToShow();
   userId = 0;
+  displayModal = 'none';
   constructor() { }
 
   ngOnInit() {
@@ -59,7 +61,19 @@ export class FormUserComponent implements OnInit {
   }
 
   saveListUser() {
+    this.displayModal = 'block';
+  }
+
+  cancelSave() {
+    this.displayModal = 'none';
+  }
+
+  startSave() {
     this.saveUser.emit();
+  }
+
+  UserIdToRemoveListAdd(id) {
+    this.removeUserFormAddList.emit(id);
   }
 
 }

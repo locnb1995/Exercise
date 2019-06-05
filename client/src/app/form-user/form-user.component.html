@@ -1,3 +1,24 @@
+<div id="modal-content-view" [ngStyle]="{'display': displayModal}">
+  <div class="view-dialog">
+    <div class="dialog-tytle">
+      <span class="dialog-ttl">Add User</span>
+      <span class="dialog-close"></span>
+    </div>
+    <!--dialog-tytle-->
+    <div class="dialog-content">
+      <div class="dialog-icon">
+        <span class="warning"></span>
+      </div>
+      <p class="dialog-text dialog-text-icon">Do you want to add user to the system?</p>
+    </div>
+    <div class="dialog-footer">
+      <button type="button" class="btn btn-default" (click)="cancelSave()">NO</button>
+      <button type="button" class="btn btn-primary" (click)="startSave()">YES</button>
+    </div>
+    <!--dialog-footer-->
+  </div>
+  <!--view-dialog-->
+</div>
 <section class="content-area">
   <h2 class="ttl">New User Registration</h2>
   <article>
@@ -20,14 +41,17 @@
             <span>{{ item.username }}</span>
           </div>
           <div class="action">
-            <span class="icon-delete"></span>
+            <span class="icon-delete" (click)="UserIdToRemoveListAdd(item.id)"></span>
           </div>
           <div class="radio-box">
-            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-1" [checked]="item.admin">
+            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-1"
+              [checked]="item.admin">
             <label for="auth1-1" class="radio">Administrator</label>
-            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-2" [checked]="item.editor">
+            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-2"
+              [checked]="item.editor">
             <label for="auth2-2" class="radio">Editor</label>
-            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-3" [checked]="item.normal">
+            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-3"
+              [checked]="item.normal">
             <label for="auth2-3" class="radio">Normal</label>
           </div>
         </li>
@@ -38,7 +62,9 @@
         <button type="button" (click)="redirectToUserManager()" id="change-password-cancel"
           class="btn btn-default btn-l">Cancel</button>
       </a>
-      <button type="button" (click)="saveListUser()" id="modal-open-contentview" class="btn btn-primary btn-l" [disabled]="listUserAdd.length === 0">Save All</button>
+      <button type="button" (click)="saveListUser()" id="modal-open-contentview" class="btn btn-primary btn-l"
+        [disabled]="listUserAdd.length === 0">Save All</button>
     </div>
   </article>
 </section>
+<div id="modal-overlay-dark" [ngStyle]="{'display': displayModal}"></div>
