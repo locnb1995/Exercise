@@ -2,12 +2,12 @@
   <div class="logo"><img src="../../assets/images/logo.svg"></div>
 
   <div id="menu" (click)="changeListStyle()">
-    <div class="userid">luyenlv@angular.com<span class="down"></span></div>
+    <div class="userid">{{ username }}<span class="down"></span></div>
     <ul id="s-menu" class="d-menu" [ngStyle]="{'display' : listStyle}">
-      <li><a href="mastermainte.html"><span class="icon-menu menu_db"></span>Dashboard</a></li>
-      <li><a href="myaccount.html"><span class="icon-menu menu_account"></span>My Account</a></li>
-      <li><a href="usermanage.html"><span class="icon-menu menu_setting"></span>User management</a></li>
-      <li><a href="logout.html"><span class="icon-menu menu_logout"></span>Logout</a></li>
+      <li><a (click)="redirectDashboard()"><span class="icon-menu menu_db"></span>Dashboard</a></li>
+      <li><a (click)="redirectMyAccount()"><span class="icon-menu menu_account"></span>My Account</a></li>
+      <li><a (click)="redirectUserManagement()"><span class="icon-menu menu_setting"></span>User management</a></li>
+      <li><a (click)="logout()"><span class="icon-menu menu_logout"></span>Logout</a></li>
     </ul>
   </div><!-- menu -->
 </header><!-- header -->

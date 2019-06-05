@@ -614,7 +614,7 @@ input.switch:checked + label::after {
   cursor: pointer;
 }
 
-.icon-save {
+.icon-save1 {
   background-image: url('../src/assets/images/download.png');
   background-position: 50% 50%;
   background-repeat: no-repeat;

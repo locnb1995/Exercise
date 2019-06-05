@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output , EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   listStyle = 'none';
   change = true;
-  constructor() { }
+  username = localStorage.getItem('username');
+  @Output() redirect = new EventEmitter<string>();
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,6 +23,23 @@ export class HeaderComponent implements OnInit {
     } else {
       this.listStyle = 'block';
     }
+  }
+
+  redirectDashboard() {
+    this.redirect.emit('dashboard');
+  }
+
+  redirectMyAccount() {
+    this.redirect.emit('myaccount');
+  }
+
+  redirectUserManagement() {
+    this.redirect.emit('usermanagement');
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/logout']);
   }
 
 }

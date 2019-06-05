@@ -1,0 +1,44 @@
+<section [ngClass]="sectionClass">
+  <h2 class="ttl">My Account</h2>
+  <article>
+    <div class="form-table">
+      <label class="item-ttl">ID</label>
+      <div class="form-item">
+        <input type="text" class="textbox textbox-line" placeholder="Your ID" value="{{ username }}"
+          disabled="disabled">
+        <button type="button" id="change-id" class="btn btn-sub">Change ID</button>
+        <div id="change-id-form" class="frame-box">
+          <div class="form-table">
+            <label class="item-ttl">New ID</label>
+            <input type="text" class="textbox textbox-line" placeholder="Please input your ID want to change">
+          </div>
+          <div class="form-btn">
+            <button type="button" id="change-id-cancel" class="btn btn-default btn-l">Cancel</button>
+            <button type="button" class="btn btn-primary btn-l">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-table">
+      <label class="item-ttl">Password</label>
+      <div class="form-item">
+        <button type="button" id="change-password" class="btn btn-sub">Change the password</button>
+        <div id="change-password-form" class="frame-box">
+          <div class="form-table">
+            <label class="item-ttl">Current password</label>
+            <input type="text" class="textbox textbox-line" placeholder="Please input old pasword">
+            <label class="item-ttl">New Password</label>
+            <input type="text" class="textbox textbox-line" placeholder="Please input new password">
+            <label class="item-ttl"></label>
+            <input type="text" class="textbox textbox-line" placeholder="Please re-input new password">
+          </div>
+          <div class="form-btn">
+            <button type="button" id="change-password-cancel" class="btn btn-default btn-l">Cancel</button>
+            <button type="button" class="btn btn-primary btn-l">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</section>

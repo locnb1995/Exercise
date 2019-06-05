@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user-services/user.service';
 import { User } from '../model/User';
 import { UserToShow } from '../model/UserToShow';
-import { Group } from '../model/Group';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -12,15 +12,22 @@ import { Group } from '../model/Group';
 export class WelcomeComponent implements OnInit {
   sectionClass = 'content-area';
   change = true;
-  showFormUser = false;
+  showPage = 'dashboard';
+  sectionDashboardClass = 'content-area mastermainte';
   listUser = new Array<User>();
   listUserShow = new Array<UserToShow>();
   userToShow = new UserToShow();
   userShowToAdd = new UserToShow();
   listUserAdd = new Array<UserToShow>();
-  constructor(private userService: UserService) { }
+
+  constructor(private userService: UserService,
+              private router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('id') === null) {
+      this.router.navigate(['/login']);
+      return;
+    }
     this.userService.getListUser().subscribe((data: Array<User>) => {
       this.listUser = data;
       data.forEach(element => {
@@ -45,18 +52,20 @@ export class WelcomeComponent implements OnInit {
     this.change = !this.change;
     if (this.change === true) {
       this.sectionClass = 'content-area';
+      this.sectionDashboardClass = 'content-area mastermainte';
     } else {
       this.sectionClass = 'content-area nav-close';
+      this.sectionDashboardClass = 'content-area mastermainte nav-close';
     }
   }
 
   redirectToFormUser() {
-    this.showFormUser = true;
+    this.showPage = 'form-user';
     this.listUserAdd = new Array<UserToShow>();
   }
 
   redirectToUser() {
-    this.showFormUser = false;
+    this.showPage = 'usermanagement';
     this.listUserAdd = new Array<UserToShow>();
   }
 
@@ -144,5 +153,9 @@ export class WelcomeComponent implements OnInit {
         this.listUserShow.push(this.userToShow);
       });
     });
+  }
+
+  redirectPage(event) {
+    this.showPage = event;
   }
 }

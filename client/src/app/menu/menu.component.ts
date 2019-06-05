@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter , Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -9,6 +9,7 @@ export class MenuComponent implements OnInit {
   viewMenu = true;
   navClass = '';
   buttonClass = 'menu-trigger';
+  @Input() page: string;
   @Output() clickChangeMenu = new EventEmitter();
   @Output() redirectToUser = new EventEmitter();
   constructor() { }

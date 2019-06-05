@@ -55,9 +55,13 @@ export class UserComponent implements OnInit {
       userToEdit.role = 3;
     }
     userToEdit.user_group = {id : 1 , name : 'game'};
-    this.userService.updateUser(userToEdit).subscribe(data => {
-      alert('update user success!!!');
-      this.redirectToManager.emit();
-    });
+    let check: boolean;
+    check = confirm('Do you want to edit this User?');
+    if (check) {
+      this.userService.updateUser(userToEdit).subscribe(data => {
+        alert('update user success!!!');
+        this.redirectToManager.emit();
+      });
+    }
   }
 }

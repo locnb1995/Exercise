@@ -6,10 +6,18 @@
       <span></span>
     </a>
   </div>
-  <ul class="nav">
-    <li><a (click)="redirectToManager()"><span class="icon-nav lmenu_user"></span><span class="nav-item">User
-          management</span></a></li>
-    <li><a href="usergroupmanage.html"><span class="icon-nav lmenu_group"></span><span class="nav-item">Group
-          management</span></a></li>
-  </ul>
+  <ng-container *ngIf="page==='dashboard'"></ng-container>
+  <ng-container *ngIf="page==='usermanagement' || page==='form-user'">
+    <ul class="nav">
+      <li><a (click)="redirectToManager()"><span class="icon-nav lmenu_user"></span><span class="nav-item">User
+            management</span></a></li>
+      <li><a href="usergroupmanage.html"><span class="icon-nav lmenu_group"></span><span class="nav-item">Group
+            management</span></a></li>
+    </ul>
+  </ng-container>
+  <ng-container *ngIf="page==='myaccount'">
+    <ul class="nav">
+      <li><a href="#"><span class="icon-nav lmenu_user"></span><span class="nav-item">My Account</span></a></li>
+    </ul>
+  </ng-container>
 </nav>

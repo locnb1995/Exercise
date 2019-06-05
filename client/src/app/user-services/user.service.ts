@@ -43,4 +43,12 @@ export class UserService {
     return this.http.put('http://localhost:8080/editUser', value, httpOptions);
   }
 
+  checkUserInfo(value) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.post('http://localhost:8080/checkUserInfo', value, httpOptions);
+  }
 }

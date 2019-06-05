@@ -1,0 +1,37 @@
+<section [ngClass]="sectionClass">
+  <div class="datatool">
+    <button type="button" class="btn btn-sub btn-s"><span class="icon-edit"></span>Edit</button>
+    <button type="button" class="btn btn-sub btn-s"><span class="icon-download"></span>Download</button>
+    <button type="button" class="btn btn-sub btn-s"><span class="icon-upload"></span>Upload</button>
+    <button type="button" class="btn btn-sub btn-s">+ row</button>
+    <button type="button" class="btn btn-danger btn-s btn-danger-tool"><span class="icon-trash"></span>Delete</button>
+    <button type="button" class="btn btn-primary btn-s"><span class="icon-save"></span>Save</button>
+  </div>
+  <div class="data-table-box">
+    <div class="data-table">
+    </div>
+  </div>
+  <div class="data-table-footer">
+    <div class="data-position">
+      <span>1 - 20 / 100 rows</span>
+    </div>
+    <div class="data-number">
+      <select name="data-number" class="textbox textbox-box">
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+      </select>
+      <span>rows / page</span>
+    </div>
+    <div class="data-pageing">
+      <button type="button" class="btn btn-sub btn-s" disabled="disabled"><span class="icon-btnprev"></span></button>
+      <span class="page-active">1</span>
+      <span>2</span>
+      <span>3</span>
+      <span class="abb">. . .</span>
+      <span>20</span>
+      <button type="button" class="btn btn-sub btn-s"><span class="icon-btnnext"></span></button>
+    </div>
+  </div>
+</section>

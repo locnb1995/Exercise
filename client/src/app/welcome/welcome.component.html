@@ -1,10 +1,16 @@
-<app-header></app-header>
+<app-header (redirect)="redirectPage($event)"></app-header>
 <div class="wrap">
-  <app-menu (clickChangeMenu)="changeMenu()" (redirectToUser)="redirectToUser()"></app-menu>
-  <ng-container *ngIf="!showFormUser">
+  <app-menu [page]="showPage" (clickChangeMenu)="changeMenu()" (redirectToUser)="redirectToUser()"></app-menu>
+  <ng-container *ngIf="showPage==='usermanagement'">
     <app-user (redirectToManager)="redirectToManager()" [sectionClass]="sectionClass" [listUser]="listUserShow" (redirect)="redirectToFormUser()"></app-user>
   </ng-container>
-  <ng-container *ngIf="showFormUser">
+  <ng-container *ngIf="showPage==='form-user'">
     <app-form-user (removeUserFormAddList)="removeUserFormAddList($event)" [sectionClass]="sectionClass" (saveUser)="saveUser()" [listUserAdd]="listUserAdd" (redirectToUser)="redirectToUser()" (addUserToList)="addUserToList($event)"></app-form-user>
+  </ng-container>
+  <ng-container *ngIf="showPage==='dashboard'">
+    <app-dashboard [sectionClass]="sectionDashboardClass"></app-dashboard>
+  </ng-container>
+  <ng-container *ngIf="showPage==='myaccount'">
+    <app-myaccount [sectionClass]="sectionClass"></app-myaccount>
   </ng-container>
 </div><!-- wrap -->
