@@ -8,6 +8,7 @@ import { UserToShow } from '../model/UserToShow';
 })
 export class FormUserComponent implements OnInit {
   @Output() redirectToUser = new EventEmitter();
+  @Input() sectionClass: string;
   @Input() listUserAdd = new Array<UserToShow>();
   @Output() addUserToList = new EventEmitter<Array<UserToShow>>();
   @Output() saveUser = new EventEmitter();

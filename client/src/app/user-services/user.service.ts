@@ -34,4 +34,13 @@ export class UserService {
     return this.http.delete('http://localhost:8080/deleteUserById/' + id);
   }
 
+  updateUser(value) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.put('http://localhost:8080/editUser', value, httpOptions);
+  }
+
 }

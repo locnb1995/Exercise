@@ -613,6 +613,15 @@ input.switch:checked + label::after {
   background-size: 20px;
   cursor: pointer;
 }
+
+.icon-save {
+  background-image: url('../src/assets/images/download.png');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  cursor: pointer;
+  margin-right: 10px;
+}
 /*********************************
  ********************************/
 /*overlay*/

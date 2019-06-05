@@ -13,10 +13,10 @@
         <li *ngFor="let item of listUser">
           <div class="item-text">
             <input type="text" class="textbox textbox-box2" placeholder="Please input your e-mail address"
-              [value]="item.username">
-            <button type="button" class="btn btn-sub">Edit</button>
+              [value]="item.username" id="username{{item.id}}">
           </div>
           <div class="action">
+            <span class="icon-save" (click)="editUser(item.id)"></span>
             <span class="icon-trash2" (click)="deleteUser(item.id)"></span>
           </div>
           <div class="radio-box">

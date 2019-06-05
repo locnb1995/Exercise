@@ -5,6 +5,6 @@
     <app-user (redirectToManager)="redirectToManager()" [sectionClass]="sectionClass" [listUser]="listUserShow" (redirect)="redirectToFormUser()"></app-user>
   </ng-container>
   <ng-container *ngIf="showFormUser">
-    <app-form-user (removeUserFormAddList)="removeUserFormAddList($event)" (saveUser)="saveUser()" [listUserAdd]="listUserAdd" (redirectToUser)="redirectToUser()" (addUserToList)="addUserToList($event)"></app-form-user>
+    <app-form-user (removeUserFormAddList)="removeUserFormAddList($event)" [sectionClass]="sectionClass" (saveUser)="saveUser()" [listUserAdd]="listUserAdd" (redirectToUser)="redirectToUser()" (addUserToList)="addUserToList($event)"></app-form-user>
   </ng-container>
 </div><!-- wrap -->
