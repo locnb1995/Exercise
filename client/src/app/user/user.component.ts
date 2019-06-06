@@ -10,7 +10,7 @@ import { User } from '../model/User';
 })
 export class UserComponent implements OnInit {
   @Input() sectionClass: string;
-  @Input() listUser: Array<UserToShow>;
+  @Input() listUser: Array<User>;
   @Output() redirect = new EventEmitter();
   @Output() redirectToManager = new EventEmitter();
   username: HTMLInputElement;

@@ -15,10 +15,8 @@ export class WelcomeComponent implements OnInit {
   showPage = 'dashboard';
   sectionDashboardClass = 'content-area mastermainte';
   listUser = new Array<User>();
-  listUserShow = new Array<UserToShow>();
   userToShow = new UserToShow();
-  userShowToAdd = new UserToShow();
-  listUserAdd = new Array<UserToShow>();
+  listUserAdd = new Array<User>();
 
   constructor(private userService: UserService,
               private router: Router) { }
@@ -30,21 +28,6 @@ export class WelcomeComponent implements OnInit {
     }
     this.userService.getListUser().subscribe((data: Array<User>) => {
       this.listUser = data;
-      data.forEach(element => {
-        this.userToShow = new UserToShow();
-        this.userToShow.id = element.id;
-        this.userToShow.username = element.username;
-        if (element.role === 1) {
-          this.userToShow.admin = true;
-        }
-        if (element.role === 2) {
-          this.userToShow.editor = true;
-        }
-        if (element.role === 3) {
-          this.userToShow.normal = true;
-        }
-        this.listUserShow.push(this.userToShow);
-      });
     });
   }
 
@@ -61,7 +44,7 @@ export class WelcomeComponent implements OnInit {
 
   redirectToFormUser() {
     this.showPage = 'form-user';
-    this.listUserAdd = new Array<UserToShow>();
+    this.listUserAdd = new Array<User>();
   }
 
   redirectToGroup() {
@@ -70,7 +53,7 @@ export class WelcomeComponent implements OnInit {
 
   redirectToUser() {
     this.showPage = 'usermanagement';
-    this.listUserAdd = new Array<UserToShow>();
+    this.listUserAdd = new Array<User>();
   }
 
   addUserToList(list) {
@@ -90,72 +73,23 @@ export class WelcomeComponent implements OnInit {
   }
 
   saveUser() {
-    let arrayToPostManyUser = new Array<User>();
-    for (let i of this.listUserAdd) {
-      let userToPost = new User();
-      userToPost.username = i.username;
-      userToPost.password = '123456';
-      if (i.admin === true) {
-        userToPost.role = 1;
-      }
-      if (i.editor === true) {
-        userToPost.role = 2;
-      }
-      if (i.normal === true) {
-        userToPost.role = 3;
-      }
-      userToPost.user_group = {id : 1 , name : 'game'};
-      arrayToPostManyUser.push(userToPost);
-    }
-    this.userService.createManyUser(arrayToPostManyUser).subscribe(data => {
-        this.userService.getListUser().subscribe((data1: Array<User>) => {
-          this.listUser = data1;
-          this.listUserShow = new Array<UserToShow>();
-          data1.forEach(element => {
-            this.userToShow = new UserToShow();
-            this.userToShow.id = element.id;
-            this.userToShow.username = element.username;
-            if (element.role === 1) {
-              this.userToShow.admin = true;
-            }
-            if (element.role === 2) {
-              this.userToShow.editor = true;
-            }
-            if (element.role === 3) {
-              this.userToShow.normal = true;
-            }
-            this.listUserShow.push(this.userToShow);
-          });
-          this.redirectToUser();
-        });
+    this.userService.createManyUser(this.listUserAdd).subscribe(data => {
+      this.userService.getListUser().subscribe((data1: Array<User>) => {
+        this.listUser = data1;
+        this.redirectToUser();
+      });
     });
   }
 
   removeUserFormAddList(id) {
     let index: number;
-    index = this.listUserAdd.findIndex(x => x.id === id);
+    index = this.listUserAdd.findIndex(x => x.show_id === id);
     this.listUserAdd.splice(index, 1);
   }
 
   redirectToManager() {
-    this.userService.getListUser().subscribe((data: Array<User>) => {
-      this.listUser = data;
-      this.listUserShow = new Array<UserToShow>();
-      data.forEach(element => {
-        this.userToShow = new UserToShow();
-        this.userToShow.id = element.id;
-        this.userToShow.username = element.username;
-        if (element.role === 1) {
-          this.userToShow.admin = true;
-        }
-        if (element.role === 2) {
-          this.userToShow.editor = true;
-        }
-        if (element.role === 3) {
-          this.userToShow.normal = true;
-        }
-        this.listUserShow.push(this.userToShow);
-      });
+    this.userService.getListUser().subscribe((data1: Array<User>) => {
+      this.listUser = data1;
     });
   }
 

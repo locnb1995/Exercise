@@ -20,12 +20,13 @@
             <span class="icon-trash2" (click)="deleteUser(item.id)"></span>
           </div>
           <div class="radio-box">
-            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-1" [checked]="item.admin" [disabled]="item.id === userId ? true : false">
+            <!-- <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-1" [checked]="item.admin" [disabled]="item.id === userId ? true : false">
             <label for="auth{{item.id}}-1" class="radio">Administrator</label>
             <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-2" [checked]="item.editor" [disabled]="item.id === userId ? true : false">
             <label for="auth{{item.id}}-2" class="radio">Editor</label>
             <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-3" [checked]="item.normal" [disabled]="item.id === userId ? true : false">
-            <label for="auth{{item.id}}-3" class="radio">Normal</label>
+            <label for="auth{{item.id}}-3" class="radio">Normal</label> -->
+            <app-radiobox [id]="item.id" [role]="item.role" [name]="item.username"></app-radiobox>
           </div>
         </li>
       </ul>

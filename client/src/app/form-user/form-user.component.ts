@@ -1,5 +1,6 @@
-import { Component, OnInit , Output , EventEmitter, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit , Output , EventEmitter, Input } from '@angular/core';
 import { UserToShow } from '../model/UserToShow';
+import { User } from '../model/User';
 
 @Component({
   selector: 'app-form-user',
@@ -9,18 +10,14 @@ import { UserToShow } from '../model/UserToShow';
 export class FormUserComponent implements OnInit {
   @Output() redirectToUser = new EventEmitter();
   @Input() sectionClass: string;
-  @Input() listUserAdd = new Array<UserToShow>();
-  @Output() addUserToList = new EventEmitter<Array<UserToShow>>();
+  @Input() listUserAdd = new Array<User>();
+  @Output() addUserToList = new EventEmitter<Array<User>>();
   @Output() saveUser = new EventEmitter();
   @Output() removeUserFormAddList = new EventEmitter<number>();
-  @ViewChild('userEmail') userEmail: ElementRef;
-  @ViewChild('adminChecked') adminChecked: ElementRef;
-  @ViewChild('editorChecked') editorChecked: ElementRef;
-  @ViewChild('normalChecked') normalChecked: ElementRef;
-  listUser = new Array<UserToShow>();
-  user = new UserToShow();
-  userId = 0;
+  selectRoleId: number;
+  userShowId = 0;
   displayModal = 'none';
+  username: string;
   constructor() { }
 
   ngOnInit() {
@@ -31,34 +28,16 @@ export class FormUserComponent implements OnInit {
   }
 
   addUserToListAdd() {
-    this.user = new UserToShow();
-    this.listUser = new Array<UserToShow>();
-    if (this.userEmail.nativeElement.value !== '') {
-      if (this.adminChecked.nativeElement.checked !== false
-        || this.editorChecked.nativeElement.checked !== false
-        || this.normalChecked.nativeElement.checked !== false ) {
-          this.user.username = this.userEmail.nativeElement.value;
-          if (this.adminChecked.nativeElement.checked !== false) {
-            this.user.admin = true;
-            this.user.editor = false;
-            this.user.normal = false;
-          }
-          if (this.editorChecked.nativeElement.checked !== false) {
-            this.user.admin = false;
-            this.user.editor = true;
-            this.user.normal = false;
-          }
-          if (this.normalChecked.nativeElement.checked !== false) {
-            this.user.admin = false;
-            this.user.editor = false;
-            this.user.normal = true;
-          }
-          this.userId += 1;
-          this.user.id = this.userId;
-          this.listUser.push(this.user);
-      }
-    }
-    this.addUserToList.emit(this.listUser);
+    let list = new Array<User>();
+    let userToAdd = new User();
+    this.userShowId += 1;
+    userToAdd.show_id = this.userShowId;
+    userToAdd.username = this.username;
+    userToAdd.password = '123456';
+    userToAdd.role = this.selectRoleId;
+    userToAdd.user_group = {id : 1 , name : 'game'};
+    list.push(userToAdd);
+    this.addUserToList.emit(list);
   }
 
   saveListUser() {
@@ -75,6 +54,11 @@ export class FormUserComponent implements OnInit {
 
   UserIdToRemoveListAdd(id) {
     this.removeUserFormAddList.emit(id);
+  }
+
+  selectRole(event) {
+    const stringEvent = event.split('-');
+    this.selectRoleId = Number(stringEvent[1]);
   }
 
 }

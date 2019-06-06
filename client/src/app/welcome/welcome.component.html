@@ -2,7 +2,7 @@
 <div class="wrap">
   <app-menu [page]="showPage" (clickChangeMenu)="changeMenu()" (redirectToUser)="redirectToUser()" (redirectToGroup)="redirectToGroup()"></app-menu>
   <ng-container *ngIf="showPage==='usermanagement'">
-    <app-user (redirectToManager)="redirectToManager()" [sectionClass]="sectionClass" [listUser]="listUserShow" (redirect)="redirectToFormUser()"></app-user>
+    <app-user (redirectToManager)="redirectToManager()" [sectionClass]="sectionClass" [listUser]="listUser" (redirect)="redirectToFormUser()"></app-user>
   </ng-container>
   <ng-container *ngIf="showPage==='form-user'">
     <app-form-user (removeUserFormAddList)="removeUserFormAddList($event)" [sectionClass]="sectionClass" (saveUser)="saveUser()" [listUserAdd]="listUserAdd" (redirectToUser)="redirectToUser()" (addUserToList)="addUserToList($event)"></app-form-user>

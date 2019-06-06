@@ -23,14 +23,9 @@
   <h2 class="ttl">New User Registration</h2>
   <article>
     <div class="manage-tool">
-      <input type="text" class="textbox textbox-line" placeholder="Please input your e-mail address for ID" #userEmail>
+      <input type="text" class="textbox textbox-line" placeholder="Please input your e-mail address for ID" [(ngModel)]="username">
       <div class="radio-box">
-        <input type="radio" name="RadioAuth0" value="radio" id="auth0-1" #adminChecked>
-        <label for="auth0-1" class="radio">Administrator</label>
-        <input type="radio" name="RadioAuth0" value="radio" id="auth0-2" #editorChecked>
-        <label for="auth0-2" class="radio">Editor</label>
-        <input type="radio" name="RadioAuth0" value="radio" id="auth0-3" #normalChecked>
-        <label for="auth0-3" class="radio">Normal</label>
+        <app-radiobox [id]="0" (selectRole)="selectRole($event)"></app-radiobox>
       </div>
       <button type="button" class="btn btn-sub" (click)="addUserToListAdd()">+ Add</button>
     </div>
@@ -41,10 +36,10 @@
             <span>{{ item.username }}</span>
           </div>
           <div class="action">
-            <span class="icon-delete" (click)="UserIdToRemoveListAdd(item.id)"></span>
+            <span class="icon-delete" (click)="UserIdToRemoveListAdd(item.show_id)"></span>
           </div>
           <div class="radio-box">
-            <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-1"
+            <!-- <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-1"
               [checked]="item.admin">
             <label for="auth1-1" class="radio">Administrator</label>
             <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-2"
@@ -52,7 +47,8 @@
             <label for="auth2-2" class="radio">Editor</label>
             <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-3"
               [checked]="item.normal">
-            <label for="auth2-3" class="radio">Normal</label>
+            <label for="auth2-3" class="radio">Normal</label> -->
+            <app-radiobox [id]="item.show_id" [role]="item.role"></app-radiobox>
           </div>
         </li>
       </ul>

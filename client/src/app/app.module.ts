@@ -19,6 +19,7 @@ import { MyaccountComponent } from './myaccount/myaccount.component';
 import { GroupComponent } from './group/group.component';
 import { GroupDetailComponent } from './group-detail/group-detail.component';
 import { FormGroupComponent } from './form-group/form-group.component';
+import { RadioboxComponent } from './radiobox/radiobox.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FormGroupComponent } from './form-group/form-group.component';
     MyaccountComponent,
     GroupComponent,
     GroupDetailComponent,
-    FormGroupComponent
+    FormGroupComponent,
+    RadioboxComponent
   ],
   imports: [
     BrowserModule,
