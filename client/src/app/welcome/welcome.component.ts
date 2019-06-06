@@ -64,6 +64,10 @@ export class WelcomeComponent implements OnInit {
     this.listUserAdd = new Array<UserToShow>();
   }
 
+  redirectToGroup() {
+    this.showPage = 'groupmanagement';
+  }
+
   redirectToUser() {
     this.showPage = 'usermanagement';
     this.listUserAdd = new Array<UserToShow>();

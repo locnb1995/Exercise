@@ -10,21 +10,21 @@
     </div>
     <div class="manage-list">
       <ul class="list">
-        <li *ngFor="let item of listUser">
+        <li *ngFor="let item of listUser" [ngClass]="item.id === userId ? 'list-myaccount' : ''">
           <div class="item-text">
             <input type="text" class="textbox textbox-box2" placeholder="Please input your e-mail address"
-              [value]="item.username" id="username{{item.id}}">
+              [value]="item.username" id="username{{item.id}}" [disabled]="item.id === userId ? true : false">
           </div>
           <div class="action">
             <span class="icon-save1" (click)="editUser(item.id)"></span>
             <span class="icon-trash2" (click)="deleteUser(item.id)"></span>
           </div>
           <div class="radio-box">
-            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-1" [checked]="item.admin">
+            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-1" [checked]="item.admin" [disabled]="item.id === userId ? true : false">
             <label for="auth{{item.id}}-1" class="radio">Administrator</label>
-            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-2" [checked]="item.editor">
+            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-2" [checked]="item.editor" [disabled]="item.id === userId ? true : false">
             <label for="auth{{item.id}}-2" class="radio">Editor</label>
-            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-3" [checked]="item.normal">
+            <input type="radio" name="RadioAuth{{item.id}}" value="radio" id="auth{{item.id}}-3" [checked]="item.normal" [disabled]="item.id === userId ? true : false">
             <label for="auth{{item.id}}-3" class="radio">Normal</label>
           </div>
         </li>

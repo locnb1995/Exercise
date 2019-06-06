@@ -16,6 +16,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormUserComponent } from './form-user/form-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyaccountComponent } from './myaccount/myaccount.component';
+import { GroupComponent } from './group/group.component';
+import { GroupDetailComponent } from './group-detail/group-detail.component';
+import { FormGroupComponent } from './form-group/form-group.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { MyaccountComponent } from './myaccount/myaccount.component';
     PagenotfoundComponent,
     FormUserComponent,
     DashboardComponent,
-    MyaccountComponent
+    MyaccountComponent,
+    GroupComponent,
+    GroupDetailComponent,
+    FormGroupComponent
   ],
   imports: [
     BrowserModule,

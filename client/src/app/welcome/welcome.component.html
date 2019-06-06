@@ -1,6 +1,6 @@
 <app-header (redirect)="redirectPage($event)"></app-header>
 <div class="wrap">
-  <app-menu [page]="showPage" (clickChangeMenu)="changeMenu()" (redirectToUser)="redirectToUser()"></app-menu>
+  <app-menu [page]="showPage" (clickChangeMenu)="changeMenu()" (redirectToUser)="redirectToUser()" (redirectToGroup)="redirectToGroup()"></app-menu>
   <ng-container *ngIf="showPage==='usermanagement'">
     <app-user (redirectToManager)="redirectToManager()" [sectionClass]="sectionClass" [listUser]="listUserShow" (redirect)="redirectToFormUser()"></app-user>
   </ng-container>
@@ -12,5 +12,8 @@
   </ng-container>
   <ng-container *ngIf="showPage==='myaccount'">
     <app-myaccount [sectionClass]="sectionClass"></app-myaccount>
+  </ng-container>
+  <ng-container *ngIf="showPage==='groupmanagement'">
+    <app-group [sectionClass]="sectionClass"></app-group>
   </ng-container>
 </div><!-- wrap -->

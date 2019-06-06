@@ -7,11 +7,11 @@
     </a>
   </div>
   <ng-container *ngIf="page==='dashboard'"></ng-container>
-  <ng-container *ngIf="page==='usermanagement' || page==='form-user'">
+  <ng-container *ngIf="page==='usermanagement' || page==='form-user' || page==='groupmanagement'">
     <ul class="nav">
-      <li><a (click)="redirectToManager()"><span class="icon-nav lmenu_user"></span><span class="nav-item">User
+      <li><a (click)="redirectToUserManager()"><span class="icon-nav lmenu_user"></span><span class="nav-item">User
             management</span></a></li>
-      <li><a href="usergroupmanage.html"><span class="icon-nav lmenu_group"></span><span class="nav-item">Group
+      <li><a (click)="redirectToGroupManager()"><span class="icon-nav lmenu_group"></span><span class="nav-item">Group
             management</span></a></li>
     </ul>
   </ng-container>

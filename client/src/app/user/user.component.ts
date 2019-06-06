@@ -17,6 +17,8 @@ export class UserComponent implements OnInit {
   adminChecked: HTMLInputElement;
   editorChecked: HTMLInputElement;
   normalChecked: HTMLInputElement;
+  userId = Number(localStorage.getItem('id'));
+
   constructor(private userService: UserService) { }
 
   ngOnInit() {

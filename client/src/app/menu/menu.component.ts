@@ -12,6 +12,7 @@ export class MenuComponent implements OnInit {
   @Input() page: string;
   @Output() clickChangeMenu = new EventEmitter();
   @Output() redirectToUser = new EventEmitter();
+  @Output() redirectToGroup = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -29,7 +30,11 @@ export class MenuComponent implements OnInit {
     this.clickChangeMenu.emit();
   }
 
-  redirectToManager() {
+  redirectToUserManager() {
     this.redirectToUser.emit();
+  }
+
+  redirectToGroupManager() {
+    this.redirectToGroup.emit();
   }
 }
