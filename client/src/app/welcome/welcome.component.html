@@ -5,7 +5,7 @@
     <app-user (redirectToManager)="redirectToManager()" [sectionClass]="sectionClass" [listUser]="listUser" (redirect)="redirectToFormUser()"></app-user>
   </ng-container>
   <ng-container *ngIf="showPage==='form-user'">
-    <app-form-user (removeUserFormAddList)="removeUserFormAddList($event)" [sectionClass]="sectionClass" (saveUser)="saveUser()" [listUserAdd]="listUserAdd" (redirectToUser)="redirectToUser()" (addUserToList)="addUserToList($event)"></app-form-user>
+    <app-form-user (changeRoleIdByShowId)="changeRoleIdByShowId($event)" (removeUserFormAddList)="removeUserFormAddList($event)" [sectionClass]="sectionClass" (saveUser)="saveUser()" [listUserAdd]="listUserAdd" (redirectToUser)="redirectToUser()" (addUserToList)="addUserToList($event)"></app-form-user>
   </ng-container>
   <ng-container *ngIf="showPage==='dashboard'">
     <app-dashboard [sectionClass]="sectionDashboardClass"></app-dashboard>

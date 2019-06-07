@@ -96,4 +96,9 @@ export class WelcomeComponent implements OnInit {
   redirectPage(event) {
     this.showPage = event;
   }
+
+  changeRoleIdByShowId(event){
+    let user = this.listUserAdd.find(x => x.show_id === event[0]);
+    user.role = event[1];
+  }
 }

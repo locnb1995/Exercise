@@ -48,7 +48,7 @@
             <input type="radio" name="RadioAuth{{ item.id }}" value="radio" id="auth{{ item.id }}-3"
               [checked]="item.normal">
             <label for="auth2-3" class="radio">Normal</label> -->
-            <app-radiobox [id]="item.show_id" [role]="item.role"></app-radiobox>
+            <app-radiobox [id]="item.show_id" [role]="item.role" (selectRole)="selectRoleByShowId($event)"></app-radiobox>
           </div>
         </li>
       </ul>

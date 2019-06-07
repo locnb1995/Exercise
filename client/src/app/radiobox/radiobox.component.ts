@@ -9,7 +9,7 @@ export class RadioboxComponent implements OnInit {
   @Input() id: number;
   @Input() role: number;
   @Input() name: string;
-  @Output() selectRole = new EventEmitter<string>();
+  @Output() selectRole = new EventEmitter<[number, string]>();
   username = localStorage.getItem('username');
   constructor() { }
 
@@ -17,6 +17,6 @@ export class RadioboxComponent implements OnInit {
   }
 
   onItemChange(value) {
-    this.selectRole.emit(value.srcElement.id);
+    this.selectRole.emit([this.id, value.srcElement.id]);
  }
 }

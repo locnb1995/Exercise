@@ -14,6 +14,7 @@ export class FormUserComponent implements OnInit {
   @Output() addUserToList = new EventEmitter<Array<User>>();
   @Output() saveUser = new EventEmitter();
   @Output() removeUserFormAddList = new EventEmitter<number>();
+  @Output() changeRoleIdByShowId = new EventEmitter<[number , number]>();
   selectRoleId: number;
   userShowId = 0;
   displayModal = 'none';
@@ -57,8 +58,14 @@ export class FormUserComponent implements OnInit {
   }
 
   selectRole(event) {
-    const stringEvent = event.split('-');
+    const stringEvent = event[1].split('-');
     this.selectRoleId = Number(stringEvent[1]);
+  }
+
+  selectRoleByShowId(event){
+    const stringEvent = event[1].split('-');
+    let role_id = Number(stringEvent[1]);
+    this.changeRoleIdByShowId.emit([event[0] , role_id]);
   }
 
 }
