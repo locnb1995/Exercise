@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user-services/user.service';
 import { User } from '../model/User';
-import { UserToShow } from '../model/UserToShow';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +14,6 @@ export class WelcomeComponent implements OnInit {
   showPage = 'dashboard';
   sectionDashboardClass = 'content-area mastermainte';
   listUser = new Array<User>();
-  userToShow = new UserToShow();
   listUserAdd = new Array<User>();
 
   constructor(private userService: UserService,
