@@ -1,6 +1,4 @@
-<input type="radio" name="RadioAuth{{ id }}" value="radio" id="auth{{ id }}-1" (change)="onItemChange($event)" [checked]="role === 1 ? true : false" [disabled]="name === username ? true : false">
-<label for="auth{{ id }}-1" class="radio">Administrator</label>
-<input type="radio" name="RadioAuth{{ id }}" value="radio" id="auth{{ id }}-2" (change)="onItemChange($event)" [checked]="role === 2 ? true : false" [disabled]="name === username ? true : false">
-<label for="auth{{ id }}-2" class="radio">Editor</label>
-<input type="radio" name="RadioAuth{{ id }}" value="radio" id="auth{{ id }}-3" (change)="onItemChange($event)" [checked]="role === 3 ? true : false" [disabled]="name === username ? true : false">
-<label for="auth{{ id }}-3" class="radio">Normal</label>
+<ng-container *ngFor="let item of listRole">
+    <input type="radio" name="RadioAuth{{ id }}" value="radio" id="auth{{ id }}-{{ item.role_id }}" (change)="onItemChange($event)" [checked]="role === item.role_id ? true : false" [disabled]="name === username ? true : false">
+    <label for="auth{{ id }}-{{ item.role_id }}" class="radio">{{item.label}}</label>
+</ng-container>

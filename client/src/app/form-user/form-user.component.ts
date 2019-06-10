@@ -29,16 +29,18 @@ export class FormUserComponent implements OnInit {
   }
 
   addUserToListAdd() {
-    let list = new Array<User>();
-    let userToAdd = new User();
-    this.userShowId += 1;
-    userToAdd.show_id = this.userShowId;
-    userToAdd.username = this.username;
-    userToAdd.password = '123456';
-    userToAdd.role = this.selectRoleId;
-    userToAdd.user_group = {id : 1 , name : 'game'};
-    list.push(userToAdd);
-    this.addUserToList.emit(list);
+    if (this.username !== undefined) {
+      let list = new Array<User>();
+      let userToAdd = new User();
+      this.userShowId += 1;
+      userToAdd.show_id = this.userShowId;
+      userToAdd.username = this.username;
+      userToAdd.password = '123456';
+      userToAdd.role = this.selectRoleId;
+      userToAdd.user_group = {id : 1 , name : 'game'};
+      list.push(userToAdd);
+      this.addUserToList.emit(list);
+    }
   }
 
   saveListUser() {
